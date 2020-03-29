@@ -37,8 +37,9 @@ public class AverageServlet extends HttpServlet {
             double srednia = suma / arrOfNumbers.length;
             BigDecimal tmp = BigDecimal.valueOf(srednia);
             DecimalFormat sredniaA = new DecimalFormat( "###.##");
-            writer.println("Average equals: '" + sredniaA.format(tmp) + "'");
-        }
+            writer.println("Average equals: " + sredniaA.format(tmp).replace(",",".") + "'");
+
+            }
 
    }
 }
