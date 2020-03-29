@@ -18,14 +18,13 @@ public class AverageServlet extends HttpServlet {
         var numbers = req.getParameter("numbers");
 
         var writer = resp.getWriter();
-        if(numbers==null){
+        if(numbers==null) {
             writer.println("Please put parameters.");
         }
-         if  (numbers!=null){
+        else {
 
-
+            writer.println("I got: '" + numbers + "'");
         }
-       // PrintWriter respWriter = resp.getWriter();
-      //  respWriter.println("I got: '" + numbers + "'");
+
    }
 }
