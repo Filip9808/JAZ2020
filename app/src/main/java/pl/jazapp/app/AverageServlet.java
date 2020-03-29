@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 @WebServlet("average")
 public class AverageServlet extends HttpServlet {
@@ -23,7 +25,19 @@ public class AverageServlet extends HttpServlet {
         }
         else {
 
-            writer.println("I got: '" + numbers + "'");
+            String[] arrOfNumbers = numbers.split(",");
+            double suma = 0;
+
+            for(int i=0; i<arrOfNumbers.length; i++)
+            {
+                double tmp = Double.parseDouble(arrOfNumbers[i]);
+                suma += tmp;
+
+            }
+            double srednia = suma / arrOfNumbers.length;
+            BigDecimal tmp = BigDecimal.valueOf(srednia);
+            DecimalFormat sredniaA = new DecimalFormat( "###.##");
+            writer.println("Average equals: '" + sredniaA.format(tmp) + "'");
         }
 
    }
