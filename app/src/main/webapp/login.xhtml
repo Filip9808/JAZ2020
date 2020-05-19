@@ -6,11 +6,18 @@
         xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
         xmlns:ui="http://java.sun.com/jsf/facelets"
 >
+<h:head>
+    <h:outputStylesheet name="main.css" library="css"/>
+    <h:outputStylesheet name="bootstrap.min.css" library="css"/>
+</h:head>
 <h:body>
 
 
 
     <h:form styleClass="form-base">
+        <div class="form-group">
+        <h:outputText styleClass="alert alert-danger" rendered="#{flash.containsKey('error-message')}" value="#{flash['error-message']}"/>
+        </div>
         <div class="form-group">
             <h:inputText id="username" styleClass="form-control" a:placeholder="Username" value="#{loginRequest.username}"/>
         </div>
@@ -22,7 +29,9 @@
         </div>
         <h:commandButton styleClass="btn btn-primary" value="login" action="#{loginController.login(loginRequest)}"/><br/>
         <h:outputLink styleClass="small" value="register.xhtml">Signup</h:outputLink>
+
     </h:form>
+
 
 
 

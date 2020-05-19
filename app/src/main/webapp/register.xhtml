@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html   xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:h="http://java.sun.com/jsf/html"
-        xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
-        xmlns:ui="http://java.sun.com/jsf/facelets"
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
 >
+<h:head>
+    <h:outputStylesheet name="main.css" library="css"/>
+    <h:outputStylesheet name="bootstrap.min.css" library="css"/>
+</h:head>
+
 <h:body>
 
 
@@ -13,8 +19,14 @@
     <h:form styleClass="form-base">
         <div class="form-group">
             <h:inputText id="username" styleClass="form-control" a:placeholder="Username"
-                         value="#{registerRequest.username}"/>
+                         value="#{registerRequest.username}">
+                <f:validateLength minimum="3" maximum="8"/>
+                <f:validator validatorId="usernameValidator"/>
+            </h:inputText>
+            <h:messages for="username" styleClass="error-message" />
+
         </div>
+
 
 
 
