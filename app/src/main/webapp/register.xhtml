@@ -20,22 +20,61 @@
         <div class="form-group">
             <h:inputText id="username" styleClass="form-control" a:placeholder="Username"
                          value="#{registerRequest.username}">
-                <f:validateLength minimum="3" maximum="8"/>
                 <f:validator validatorId="usernameValidator"/>
             </h:inputText>
             <h:messages for="username" styleClass="error-message" />
 
         </div>
 
-
-
-
         <div class="form-group">
             <h:inputText id="password" styleClass="form-control" a:placeholder="Password"
-                         value="#{registerRequest.password}"/>
+                         value="#{registerRequest.password}">
+            <f:validator validatorId="passwordValidator"/>
+        </h:inputText>
+        <h:messages for="password" styleClass="error-message" />
         </div>
+
+        <div class="form-group">
+            <h:inputText id="passwordCheck" styleClass="form-control" a:placeholder="Password Repeat"
+                         value="#{registerRequest.passwordCheck}">
+            <f:validator validatorId="passwordcheckValidator"/>
+        </h:inputText>
+        <h:messages for="passwordCheck" styleClass="error-message" />
+        </div>
+        <div class="form-group">
+            <h:inputText id="email" styleClass="form-control" a:placeholder="E-mail"
+                         value="#{registerRequest.email}">
+                <f:validator validatorId="emailValidator"/>
+            </h:inputText>
+            <h:messages for="email" styleClass="error-message" />
+        </div>
+
+        <div class="form-group">
+            <h:inputText id="birthday" styleClass="form-control" a:placeholder="Birthday"
+                         value="#{registerRequest.birthday}">
+                <f:validator validatorId="birthdayValidator"/>
+            </h:inputText>
+            <h:messages for="birthday" styleClass="error-message" />
+        </div>
+
+        <div class="form-group">
+            <h:inputText id="firstName" styleClass="form-control" a:placeholder="First Name"
+                         value="#{registerRequest.firstName}">
+                <f:validator validatorId="firstnameValidator"/>
+            </h:inputText>
+            <h:messages for="firstName" styleClass="error-message" />
+        </div>
+        <div class="form-group">
+            <h:inputText id="lastname" styleClass="form-control" a:placeholder="Last Name"
+                         value="#{registerRequest.lastName}">
+                <f:validator validatorId="lastnameValidator"/>
+            </h:inputText>
+            <h:messages  for="lastname" StyleClass="error-message" />
+        </div>
+
         <h:commandButton styleClass="btn btn-primary" value="Signup"
-                         action="#{registerController.register(registerRequest)}"/><br/>
+                     action="#{registerController.register(registerRequest)}"/><br/>
+
     </h:form>
 
 

@@ -8,15 +8,15 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 import java.util.PropertyResourceBundle;
 
-@FacesValidator("usernameValidator")
-public class UsernameValidator implements Validator<String> {
+@FacesValidator("firstnameValidator")
+public class FirstNameValidator implements Validator<String> {
     private static final String MESSAGE_ID =
-            "pl.jazapp.app.webapp.extension.validator.UsernameValidator";
+            "pl.jazapp.app.webapp.extension.validator.FirstNameValidator";
 
 
     @Override
     public void validate(FacesContext context, UIComponent component, String value) throws ValidatorException {
-        if (!value.matches("[a-z0123456789]+")) {
+        if (!value.matches("^[a-zA-ZśŚżóćźłąŻŹŁÓĆĄŃń]{1,25}$")) {
             var msg = getMsg(context);
             msg.getString(MESSAGE_ID);
             var onlySmallLettersMsg = msg.getString(MESSAGE_ID);

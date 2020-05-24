@@ -6,13 +6,24 @@
         xmlns:ui="http://java.sun.com/jsf/facelets"
 >
 <h:body>
+    <h:head>
+        <h:outputStylesheet name="main.css" library="css"/>
+        <h:outputStylesheet name="bootstrap.min.css" library="css"/>
+    </h:head>
+
+<h:outputText value="#{userContext.welcomeMessage}">
+
+</h:outputText>
+    <br/>
+    <br/>
+    <br/>
 
 
+    <h:form>
 
-    <h3>Hello from Index!</h3>
-<!--   \ <h4>MY TEXT FROM PROPERTIES<h:outputText value="#{msg['aaa']}"></h:outputText></h4>-->
+        <h:commandButton styleClass="btn btn-primaty" value="Logout" action="#{loginController.logout}"/> <br/>
 
-
+    </h:form>
 
 </h:body>
 </html>
