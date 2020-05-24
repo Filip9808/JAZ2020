@@ -8,10 +8,10 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 import java.util.PropertyResourceBundle;
 
-@FacesValidator("lastnameValidator")
+@FacesValidator("LastNameValidator")
 public class LastNameValidator implements Validator<String> {
     private static final String MESSAGE_ID =
-            "pl.jazapp.app.webapp.extension.validator.FirstNameValidator";
+            "pl.jazapp.app.webapp.extension.validator.LastNameValidator";
 
 
     @Override
