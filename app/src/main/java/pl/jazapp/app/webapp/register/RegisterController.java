@@ -18,18 +18,20 @@ public class RegisterController {
         FacesContext context = FacesContext.getCurrentInstance();
         if (Storage.IsUserExist(registerRequest.getUsername())) {
             context.addMessage(null, new FacesMessage("Username is already taken."));
+            return null;
 
         } else if (!registerRequest.getPassword().equals(registerRequest.getPasswordCheck())) {
             context.addMessage(null, new FacesMessage("Passwords do not match."));
+            return null;
         } else {
             Storage.AddToStorage(registerRequest.getUsername(), new User(registerRequest.getUsername(),
                     registerRequest.getPassword(),registerRequest.getEmail(), registerRequest.getBirthday(),
                     registerRequest.getFirstName().substring(0, 1).toUpperCase() + registerRequest.getFirstName().substring(1),
                     registerRequest.getLastName().substring(0, 1).toUpperCase() + registerRequest.getLastName().substring(1)));
-
+            return "/login.xhtml?faces-redirect=true";
         }
 
 
-        return "/login.xhtml?faces-redirect=true";
+
     }
 }

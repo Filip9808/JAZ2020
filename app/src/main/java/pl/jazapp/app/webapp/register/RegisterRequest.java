@@ -63,7 +63,7 @@ public class RegisterRequest {
 
 
     public String getPassword() {
-        return username;
+        return password;
     }
 
 

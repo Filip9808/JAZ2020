@@ -25,13 +25,15 @@ public class LoginController {
             userContext.setWelcomeMessage(Storage.getFirstName(loginRequest.getUsername()) + " " + Storage.getLastName(loginRequest.getUsername()));
             return "/index.xhtml?faces-redirect=true";
 
-        } else {
-            FacesContext.getCurrentInstance().getExternalContext().getFlash()
-                    .put("error-message", "Username or password is incorrect");
+              } else {
+             FacesContext.getCurrentInstance().getExternalContext().getFlash().put("error-message", "Username or password is incorrect");
 
-            return null;
+             return null;
         }
+
     }
+
+
 
     public String logout() {
         userContext.logOut();

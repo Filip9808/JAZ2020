@@ -22,7 +22,7 @@ public class LoginRequest {
 
 
     public String getPassword() {
-        return username;
+        return password;
     }
 
 

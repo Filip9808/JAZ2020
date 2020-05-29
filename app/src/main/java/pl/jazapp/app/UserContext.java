@@ -12,14 +12,16 @@ public class UserContext implements Serializable {
     private static final long serialVersionUID = 1L;
     private String WelcomeMessage;
 
-    private boolean IsLogged;
+    private boolean IsLogged = false;
 
     public boolean isLogged() {
         return IsLogged;
     }
+
     public void logIn() {
         this.IsLogged = true;
     }
+
     public void logOut() {
         this.IsLogged = false;
     }
