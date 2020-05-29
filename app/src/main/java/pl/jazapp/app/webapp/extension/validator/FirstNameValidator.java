@@ -16,7 +16,7 @@ public class FirstNameValidator implements Validator<String> {
 
     @Override
     public void validate(FacesContext context, UIComponent component, String value) throws ValidatorException {
-        if (!value.matches("^[a-zA-ZśŚżóćźłąŻŹŁÓĆĄŃń]{1,25}$")) {
+        if (!value.matches("^[\\p{L}]{1,25}$")) {
             var msg = getMsg(context);
             msg.getString(MESSAGE_ID);
             var onlySmallLettersMsg = msg.getString(MESSAGE_ID);
